@@ -2,7 +2,7 @@ java:
 	java Request.java
 
 python:
-	python3.11 request.py
+	python3 request.py
 
 nodejs:
 	node request.js
