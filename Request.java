@@ -22,7 +22,7 @@ public class Request {
         for (int i = 0; i < NUM_REQUESTS; i++) {
             HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://www.example.com"))
-                // .setHeader("header name", "value")
+                // .setHeader("header-name", "value")
                 // .POST(HttpRequest.BodyPublishers.ofString("request body"))
                 .timeout(Duration.ofSeconds(1))
                 .build();
