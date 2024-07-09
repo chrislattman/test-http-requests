@@ -31,16 +31,17 @@ func main() {
 				fmt.Println(err)
 				return
 			}
-			// body, err := io.ReadAll(resp.Body)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// 	return
-			// }
-			// fmt.Println(string(body))
-			// contentType := resp.Header.Get("Content-Type")
-			// fmt.Println(contentType)
 			if resp.StatusCode != 200 {
 				asyncBad = true
+			} else {
+				// contentType := resp.Header.Get("Content-Type")
+				// fmt.Println(contentType)
+				// body, err := io.ReadAll(resp.Body)
+				// if err != nil {
+				// 	fmt.Println(err)
+				// 	return
+				// }
+				// fmt.Println(string(body))
 			}
 		}()
 	}
@@ -66,16 +67,18 @@ func main() {
 			fmt.Println(err)
 			continue
 		}
-		// body, err := io.ReadAll(resp.Body)
-		// if err != nil {
-		// 	fmt.Println(err)
-		// 	return
-		// }
-		// fmt.Println(string(body))
-		// contentType := resp.Header.Get("Content-Type")
-		// fmt.Println(contentType)
 		if resp.StatusCode != 200 {
 			bad = true
+			continue
+		} else {
+			// contentType := resp.Header.Get("Content-Type")
+			// fmt.Println(contentType)
+			// body, err := io.ReadAll(resp.Body)
+			// if err != nil {
+			// 	fmt.Println(err)
+			// 	return
+			// }
+			// fmt.Println(string(body))
 		}
 	}
 	endTime = time.Now().UnixMilli()

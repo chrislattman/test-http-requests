@@ -12,13 +12,14 @@ async_bad = False
 async def get_response(session: aiohttp.ClientSession):
     # async with session.post("https://www.example.com", data=b"request body", headers={"header-name": "value"}, timeout=aiohttp.ClientTimeout(total=1)) as response:
     async with session.get("https://www.example.com", timeout=aiohttp.ClientTimeout(total=1)) as response:
-        # body = await response.text()
-        # print(body)
-        # content_type = response.headers["Content-Type"]
-        # print(content_type)
         if response.status != 200:
             global async_bad
             async_bad = True
+        # else:
+        #     content_type = response.headers["Content-Type"]
+        #     print(content_type)
+        #     body = await response.text()
+        #     print(body)
 
 
 async def async_main():
@@ -31,13 +32,14 @@ def main():
     for _ in range(NUM_REQUESTS):
         # response = requests.post("https://www.example.com", data=b"request body", headers={"header-name": "value"}, timeout=1)
         response = requests.get("https://www.example.com", timeout=1)
-        # body = response.text
-        # print(body)
-        # content_type = response.headers["Content-Type"]
-        # print(content_type)
         if response.status_code != 200:
             global bad
             bad = True
+        # else:
+        #     content_type = response.headers["Content-Type"]
+        #     print(content_type)
+        #     body = response.text
+        #     print(body)
 
 
 start_time = time.time()

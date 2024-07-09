@@ -27,16 +27,14 @@ public class Request {
                 .timeout(Duration.ofSeconds(1))
                 .build();
             CompletableFuture<Void> future = client.sendAsync(request, BodyHandlers.ofString())
-                // .thenApply(response -> {
-                //     String body = response.body();
-                //     System.out.println(body);
-                //     String contentType = response.headers().firstValue("Content-Type").orElse(null);
-                //     System.out.println(contentType);
-                //     return response;
-                // })
-                .thenApply(HttpResponse::statusCode).thenAccept(statusCode -> {
-                    if (statusCode != 200) {
+                .thenAccept(response -> {
+                    if (response.statusCode() != 200) {
                         asyncBad = true;
+                    } else {
+                        // String contentType = response.headers().firstValue("Content-Type").orElse(null);
+                        // System.out.println(contentType);
+                        // String body = response.body();
+                        // System.out.println(body);
                     }
                 });
             futures.add(future);
@@ -59,12 +57,13 @@ public class Request {
                 .timeout(Duration.ofSeconds(1))
                 .build();
             HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-            // String body = response.body();
-            // System.out.println(body);
-            // String contentType = response.headers().firstValue("Content-Type").orElse(null);
-            // System.out.println(contentType);
             if (response.statusCode() != 200) {
                 bad = true;
+            } else {
+                // String contentType = response.headers().firstValue("Content-Type").orElse(null);
+                // System.out.println(contentType);
+                // String body = response.body();
+                // System.out.println(body);
             }
         }
         endTime = System.currentTimeMillis();

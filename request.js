@@ -10,12 +10,13 @@ async function getResponse() {
         // },
         signal: AbortSignal.timeout(1000)
     });
-    // const body = await response.text();
-    // console.log(body);
-    // const contentType = response.headers.get("Content-Type");
-    // console.log(contentType);
     if (response.status !== 200) {
         asyncBad = true;
+    } else {
+        // const contentType = response.headers.get("Content-Type");
+        // console.log(contentType);
+        // const body = await response.text();
+        // console.log(body);
     }
 }
 
