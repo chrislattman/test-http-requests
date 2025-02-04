@@ -9,3 +9,6 @@ nodejs:
 
 go:
 	go run request.go
+
+csharp:
+	dotnet run
