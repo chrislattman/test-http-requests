@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.22)
 project(test-http-requests C)
 
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS OFF)
+
 find_package(CURL REQUIRED COMPONENTS libcurl)
 
 add_executable(request request.c)
