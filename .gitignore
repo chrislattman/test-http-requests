@@ -4,3 +4,5 @@ target/
 request
 .vscode/
 .DS_Store
+build/
+CMakeUserPresets.json

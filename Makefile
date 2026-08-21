@@ -14,7 +14,8 @@ csharp:
 	dotnet run
 
 c:
-	gcc -Wall -Wextra -pedantic -o request request.c -lcurl && ./request
+	cmake --build build && cmake --build build --target run-request
+# 	gcc -Wall -Wextra -pedantic -o request request.c -lcurl && ./request
 
 rust:
 	cargo run -q
