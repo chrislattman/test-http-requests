@@ -21,4 +21,4 @@ rust:
 	cargo run -q
 
 clean:
-	rm -rf bin obj target request
+	dotnet clean && cmake --build build --target clean && cargo clean
