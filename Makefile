@@ -14,7 +14,7 @@ csharp:
 	dotnet run -v q
 
 c:
-	cmake --build build --target run-request
+	cmake --build build --target run-request -- --quiet
 # 	gcc -Wall -Wextra -pedantic -o request request.c -lcurl && ./request
 
 rust:
