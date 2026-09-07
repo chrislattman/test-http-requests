@@ -11,7 +11,7 @@ go:
 	go run go/request.go
 
 csharp:
-	dotnet run
+	dotnet run -v q
 
 c:
 	cmake --build build && cmake --build build --target run-request
