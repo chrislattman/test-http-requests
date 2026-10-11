@@ -14,4 +14,6 @@ add_custom_target(run-request
     COMMAND request
     DEPENDS request
     WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}"
+    USES_TERMINAL
+    VERBATIM
 )
